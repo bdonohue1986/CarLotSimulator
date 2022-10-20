@@ -1,11 +1,67 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
+
+            var newCar = new Car();
+
+
+
+            CarLot carLot = new CarLot();
+            carLot.CarList = new List<Car>();
+
+            newCar.Year = 2010;
+            newCar.Make = "BMW";
+            newCar.Model = "745LI";
+            newCar.EngineNoise = "Vroom,Vroom";
+            newCar.HonkNoise = "Beep Beep";
+            newCar.IsDriveable = "YES";
+            newCar.MakeEngineNoise();
+            newCar.MakeHonkNoise();
+            carLot.CarList.Add(newCar);
+            Console.WriteLine();
+
+            var newCar2 = new Car() {
+
+                Year = 2020,
+                Make = "FORD",
+                Model = "FOCUS",
+                EngineNoise = "Vroom,Vroom",
+            HonkNoise = "Beep Beep",
+                IsDriveable = "YES",
+            };
+                 newCar2.MakeEngineNoise();
+                 newCar2.MakeHonkNoise();
+                carLot.CarList.Add(newCar2);
+            Console.WriteLine();
+
+            var newCar3 = new Car() { Year = 2014, Model = "Pontiac", Make = "Sunfire", IsDriveable = "yes", EngineNoise = "vroom", HonkNoise = "Beep beep" };
+
+
+               newCar3.MakeEngineNoise();
+                newCar3.MakeHonkNoise();
+                carLot.CarList.Add(newCar3);
+            Console.WriteLine();
+
+
+                foreach(var car in carLot.CarList)
+                {
+                    Console.WriteLine($"{car.Year} {car.Make} {car.Model}");
+                }
+
+
+            }
+
+
+
+
             //TODO
 
             //Create a seperate class file called Car
@@ -30,4 +86,5 @@ namespace CarLotSimulator
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
         }
     }
-}
+        
+
