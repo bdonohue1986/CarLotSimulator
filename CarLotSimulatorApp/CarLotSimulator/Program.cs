@@ -26,7 +26,10 @@ namespace CarLotSimulator
             newCar.MakeEngineNoise();
             newCar.MakeHonkNoise();
             carLot.CarList.Add(newCar);
+            int spot = CarLot.numOfCars(1);
             Console.WriteLine();
+
+            // next
 
             var newCar2 = new Car() {
 
@@ -40,7 +43,10 @@ namespace CarLotSimulator
                  newCar2.MakeEngineNoise();
                  newCar2.MakeHonkNoise();
                 carLot.CarList.Add(newCar2);
+            int spot1 = CarLot.numOfCars(2);
             Console.WriteLine();
+
+            // Next
 
             var newCar3 = new Car() { Year = 2014, Model = "Pontiac", Make = "Sunfire", IsDriveable = "yes", EngineNoise = "vroom", HonkNoise = "Beep beep" };
 
@@ -48,13 +54,16 @@ namespace CarLotSimulator
                newCar3.MakeEngineNoise();
                 newCar3.MakeHonkNoise();
                 carLot.CarList.Add(newCar3);
+            int spot2 = CarLot.numOfCars(3);
             Console.WriteLine();
+
 
 
                 foreach(var car in carLot.CarList)
                 {
                     Console.WriteLine($"{car.Year} {car.Make} {car.Model}");
                 }
+                
 
 
             }
